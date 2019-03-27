@@ -1,0 +1,265 @@
+/*
+* dqxi_styles.css
+* by Andrea Hewko (radiantmemories451)
+*
+* Contains all of the css styling that applies to
+* the DQXI skill simulator.
+*/
+
+/**************/
+/*  Heading   */
+/**************/
+/* Contains the main content of the header */
+.header_main_grid {
+    flex-grow: 1;
+    flex-basis: 100%;
+    display: inline-grid;
+  
+    grid-template-areas:
+        "character_levels_header character_levels_header character_levels_header character_levels_header game_progress_header game_progress_header game_progress_header game_progress_header game_progress_header game_progress_header"
+		"filler filler filler filler game_progress_act1_header game_progress_act1_header game_progress_act2_header game_progress_act2_header game_progress_act3_header game_progress_act3_header"
+        "character_levels_Hero character_levels_Erik character_levels_Veronica character_levels_Serena game_progress_act1_event1 game_progress_act1_event2 game_progress_act2_event1 game_progress_act2_event2 game_progress_act3_event1 game_progress_act3_event2 "
+        "character_levels_Sylvando character_levels_Jade character_levels_Rab character_levels_Eight game_progress_act1_event3 game_progress_act1_event4 game_progress_act2_event3 game_progress_act2_event4 game_progress_act3_event3 game_progress_act3_event4";
+  
+    grid-template-columns: 0.6fr 0.6fr 0.6fr 0.6fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    border: 3px solid rgb(214,129,137);
+}
+
+.header_main_grid > * {
+    border: 1px solid rgb(214,129,0);
+}
+
+.character_levels_header {
+    grid-area: character_levels_header;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.character_levels_Hero {
+    grid-area: character_levels_Hero;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.character_levels_Erik {
+    grid-area: character_levels_Erik;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.character_levels_Veronica {
+    grid-area: character_levels_Veronica;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.character_levels_Serena {
+    grid-area: character_levels_Serena;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.character_levels_Sylvando {
+	grid-area: character_levels_Sylvando;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.character_levels_Jade {
+	grid-area: character_levels_Jade;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.character_levels_Rab {
+    grid-area: character_levels_Rab;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.character_levels_Eight {
+    grid-area: character_levels_Eight;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_header {
+	grid-area: game_progress_header;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act1_header {
+	grid-area: game_progress_act1_header;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act2_header {
+	grid-area: game_progress_act2_header;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act3_header {
+	grid-area: game_progress_act3_header;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act1_event1 {
+    grid-area: game_progress_act1_event1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act1_event2 {
+    grid-area: game_progress_act1_event2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act1_event3 {
+    grid-area: game_progress_act1_event3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act1_event4 {
+    grid-area: game_progress_act1_event4;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act2_event1 {
+    grid-area: game_progress_act2_event1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act2_event2 {
+    grid-area: game_progress_act2_event2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act2_event3 {
+    grid-area: game_progress_act2_event3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act2_event4 {
+    grid-area: game_progress_act2_event4;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act3_event1 {
+    grid-area: game_progress_act3_event1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act3_event2 {
+    grid-area: game_progress_act3_event2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act3_event3 {
+    grid-area: game_progress_act3_event3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act3_event4 {
+    grid-area: game_progress_act3_event4;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/**************/
+/*  Nav Tabs  */
+/**************/
+/* Applies the formatting for the nav_tabs that is specific to DQXI */
+
+/*
+.tabrow:before {
+	position: absolute;
+	content: " ";
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	border-bottom: 1px solid #AAA;
+	z-index: 1;
+}
+
+.tabrow li {
+		    border: 1px solid #AAA;
+		    background: #D1D1D1;
+		    background: -o-linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+		    background: -ms-linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+		    background: -moz-linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+		    background: -webkit-linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+		    background: linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+		    display: inline-block;
+		    position: relative;
+		    z-index: 0;
+		    border-top-left-radius: 6px;
+		    border-top-right-radius: 6px;
+		    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4), inset 0 1px 0 #FFF;
+		    text-shadow: 0 1px #FFF;
+		    margin: 0 -5px;
+		    padding: 0 20px;
+}
+
+.tabrow li:before,
+.tabrow li:after {
+	border: 1px solid #AAA;
+	position: absolute;
+	bottom: -1px;
+	width: 5px;
+	height: 5px;
+	content: " ";
+}
+
+.tabrow li:before {
+	left: -6px;
+	border-bottom-right-radius: 6px;
+	border-width: 0 1px 1px 0;
+	box-shadow: 2px 2px 0 #D1D1D1;
+}
+.tabrow li:after {
+	right: -6px;
+	border-bottom-left-radius: 6px;
+	border-width: 0 0 1px 1px;
+	box-shadow: -2px 2px 0 #D1D1D1;
+}
+*/

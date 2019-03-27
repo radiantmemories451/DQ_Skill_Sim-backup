@@ -1,0 +1,433 @@
+/*
+* styles.css
+* by Andrea Hewko (radiantmemories451)
+*
+* Contains all of the css styling that applies to
+* the home page and the portions of css styling that
+* apply to all of the skill sim pages (mostly general
+* page setup).
+*/
+
+
+/**************/
+/*  General   */
+/**************/
+
+.blue-theme {
+    --body-background: rgb(44, 105, 155); /*option 1: rgb(37, 113, 175) */ /*option 2: #226699 */
+                                  /*optiion 3: #007FC9 */
+    --header-background: rgb(0, 36, 58); /*option 1: rgb(0, 31, 50) */ /*option 2: rgb(0, 36, 58)*/
+
+    --available-highlight: #A3DAD4;
+    --available-background: #003366;
+    --available-midtone: #226699;
+
+    --unavailable-highlight: #A9A9A9;
+    --unavailable-background: #394B61;
+    --unavailable-midtone: #778898;
+}
+
+body {
+    background-color: var(--body-background);
+    font-family: Helvetica, Arial;
+    color: #F2B14D;
+    margin: 0px;
+    -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
+}
+
+h2 {
+    /* placeholder */
+}
+
+p {
+    display: inline;
+}
+
+/**********************/
+/*  CSS Grid Layouts  */
+/**********************/
+/*Page layout for every skill simulator*/
+.page_grid {
+    /* grid fallback (if grid not supported) */
+
+    /* if supported */
+    display: grid;
+  
+    grid-template-areas:
+        "header"
+        "nav_tabs"
+        "main"
+        "footer";
+  
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.3fr 4fr 0.5fr;
+    grid-gap: 0px;
+    height: 100vh;
+}
+
+/*
+.page_grid > * {
+    border: 3px solid rgb(37, 24, 156);
+}
+*/
+
+.header {
+    grid-area: header;
+    background-color: var(--header-background);
+    flex-grow: 0;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.nav_tabs {
+    grid-area: nav_tabs;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    padding: 0.05% 0.03% 0 0.026%;
+    list-style: none;
+    border-bottom: 2px solid rgb(37,24,156);
+}
+
+.main {
+    /* grid fallback (if grid not supported) */
+    display: flex;
+    flex-wrap: wrap;
+
+    /* if supported */
+    grid-area: main;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+/*********************/
+/*  Flex Containers  */
+/*********************/
+
+/* General formatting for all flex containers (currently unused, try to put back later)*/
+.flex_container {
+    display: flex;
+    align-items: center;
+}
+
+/******* Homepage *******/
+.homepage_logos_flex_container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    height: 80vh;
+}
+
+.homepage_logos_flex_container > div {
+    width: 30%;
+}
+
+/**************************/
+/*  Other Heading Stuff   */
+/**************************/
+.header-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-links a {
+    flex: 1;
+}
+
+.header-links svg {
+    width: 30px;
+    fill: var(--available-highlight);
+}
+
+#info {
+    font-size: 15px;
+    margin-right: auto;
+    font-weight: bold;
+}
+
+/**************************/
+/*  Other Nav Tab Stuff   */
+/**************************/
+.nav_tabs li {
+    width: 12.3%; /*12.5% */
+    border-top: 1px solid rgb(37,24,156);
+    border-left: 1px solid rgb(37,24,156);
+    border-right: 1px solid rgb(37,24,156);
+    border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+    box-shadow: 0 3px 3px rgba(34, 36, 58, 0.4), inset 0 2px 0 rgba(109, 158, 223, 0.39);
+    height: 100%;
+}
+
+.nav_tabs li:before,
+.nav_tabs li:after {
+    position: absolute;
+    bottom: -1px;
+	width: 5px;
+	height: 5px;
+	content: " ";
+}
+
+.nav_tabs li:before {
+    left: -6px;
+    border-bottom-right-radius: 6px;
+    border-width: 0 1px 1px 0;
+}
+
+.nav_tabs li:after {
+    right: -6px;
+    border-bottom-right-radius: 6px;
+    border-width: 0 1px 1px 0;
+}
+
+.nav_tabs li.selected {
+    color: rgb(0, 36, 58);
+    z-index: 2;
+    border-bottom-color: rgb(44, 105, 155);
+}
+
+.tabrow li.selected:before {
+	box-shadow: 2px 2px 0 #FFF;
+}
+.tabrow li.selected:after {
+	box-shadow: -2px 2px 0 #FFF;
+}
+
+.nav_tabs a {
+    display: flex;
+    border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0.5rem 0rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #F2B14D;
+    height: 70%;
+}
+
+.nav_tabs a:hover, a:focus{
+    background: rgb(0, 50, 150);
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4), inset 0 2px 0 rgba(109, 158, 223, 0.39);
+    /* color: white; */
+}
+
+.nav_tabs_icons_div {
+    align-items: flex-start;
+}
+
+.nav_tabs_icons {
+    width: 35px;
+    height: 35px;
+}
+
+#spacer {
+    width: 4%;
+}
+
+#spacer2 {
+    width: 12%;
+}
+
+/**************/
+/*   Tree     */
+/**************/
+
+:root {
+    --node-width: 200px;
+    --node-height: 24px;
+    --node-border: 2px;
+    --node-horizontal-padding: 64px;
+    --node-vertical-padding: 12px;
+    --yellow: #FFF133;
+}
+
+
+.skill-available {
+    --highlight: var(--available-highlight);
+    --background: var(--available-background);
+    --midtone: var(--available-midtone);
+}
+
+.skill-unavailable {
+    --highlight: var(--unavailable-highlight);
+    --background: var(--unavailable-background);
+    --midtone: var(--unavailable-midtone);
+}
+
+table {
+    min-width: calc(var(--node-width) * 1.5);
+    border-spacing: 1px;
+    white-space: nowrap;
+}
+
+.skill-description {
+    line-height: 1.4em;
+    white-space: initial;
+    text-align: left;
+}
+
+th {
+    padding: 5px;
+    background-color: var(--available-midtone);
+    color: var(--available-highlight);
+}
+
+table > tr:first-child > *:first-child {
+    border-radius: 1ex 0 0 0;
+}
+
+table > tr:first-child > *:last-child {
+    border-radius: 0 1ex 0 0;
+}
+
+table > tr:last-child > *:first-child {
+    border-radius: 0 0 0 1ex;
+}
+
+table > tr:last-child > *:last-child {
+    border-radius: 0 0 1ex 0;
+}
+
+table > tr:last-child > *:only-child {
+    border-radius: 0 0 1ex 1ex;
+}
+
+td {
+    padding: 5px;
+    font-size: 10pt;
+    background: var(--available-background);
+    color: #E5FFF8;
+}
+
+.tree {
+    position: relative;
+}
+
+.skill {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: var(--node-width);
+    height: var(--node-height);
+    border: solid var(--node-border) var(--highlight);
+    border-radius: 100px;
+    background-color: var(--background);
+}
+
+.skill-name-en {
+    margin-left: 4px;
+    color: var(--highlight);
+    font-size: 15px;
+}
+
+.skill-type {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    width: calc(var(--node-width) * 0.225);
+    height: calc(var(--node-height) - 4px);
+    margin-right: 2px;
+    border-radius: 100px;
+    background-color: var(--highlight);
+    text-align: center;
+}
+
+.skill-type-special {
+    align-items: center;
+    justify-content: center;
+    color: var(--background);
+    font-weight: bold;
+    font-stretch: condensed;
+    font-size: 12px;
+}
+
+.skill-type-normal {
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.skill-type-normal:before {
+    content: '';
+    position: absolute;
+    left: 28%;
+    flex-basis: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--midtone);
+    transform: rotate(-65deg);
+}
+
+.skill-current-level {
+    width: 23px;
+    margin: 1px;
+    color: var(--background);
+    font-size: 16px;
+}
+
+.skill-max-level {
+    position: relative;
+    width: 15px;
+    margin-right: 2px;
+    font-size: 12px;
+}
+
+.skill-available .skill-max-level { color: var(--highlight); }
+.skill-unavailable .skill-max-level { color: var(--background); }
+
+.skill-info {
+    padding: 0;
+    margin: 0;
+    background-color: #000000;
+    color: var(--available-highlight);
+    text-align: center;
+    border-radius: 1ex;
+    position: absolute;
+}
+
+.info-current-level {
+    font-weight: bold;
+    color: var(--yellow);
+}
+
+.line {
+    position: absolute;
+    background-color: var(--available-highlight);
+}
+
+.level-req {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--yellow);
+    text-shadow: -1px -1px 0 #105068, 1px -1px 0  #105068, -1px 1px 0 #105068, 1px 1px 0  #105068;
+    text-align: center;
+    width: 30px;
+    height: 20px;
+    margin: 2px;
+}
