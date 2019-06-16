@@ -16,18 +16,20 @@
     display: inline-grid;
   
     grid-template-areas:
-        "character_levels_header character_levels_header character_levels_header character_levels_header game_progress_header game_progress_header game_progress_header game_progress_header game_progress_header game_progress_header"
-		"filler filler filler filler game_progress_act1_header game_progress_act1_header game_progress_act2_header game_progress_act2_header game_progress_act3_header game_progress_act3_header"
-        "character_levels_Hero character_levels_Erik character_levels_Veronica character_levels_Serena game_progress_act1_event1 game_progress_act1_event2 game_progress_act2_event1 game_progress_act2_event2 game_progress_act3_event1 game_progress_act3_event2 "
-        "character_levels_Sylvando character_levels_Jade character_levels_Rab character_levels_Eight game_progress_act1_event3 game_progress_act1_event4 game_progress_act2_event3 game_progress_act2_event4 game_progress_act3_event3 game_progress_act3_event4";
+        "character_levels_header character_levels_header character_levels_header character_levels_header game_progress_header game_progress_header game_progress_header game_progress_header game_progress_header"
+		"character_levels_Hero character_levels_Erik character_levels_Veronica character_levels_Serena game_progress_act1_header game_progress_act2_header game_progress_act2_header game_progress_act3_header game_progress_act3_header"
+        "character_levels_Hero character_levels_Erik character_levels_Veronica character_levels_Serena game_progress_act1_event1 game_progress_act2_event1 game_progress_act2_event2 game_progress_act3_event1 game_progress_act3_event2 "
+		"character_levels_Hero character_levels_Erik character_levels_Veronica character_levels_Serena game_progress_act1_event2 game_progress_act2_event3 game_progress_act2_event4 game_progress_act3_event3 game_progress_act3_event4 "
+        "character_levels_Sylvando character_levels_Jade character_levels_Rab character_levels_Eight game_progress_act1_event3 game_progress_act2_event5 game_progress_act2_event6 game_progress_act3_event5 game_progress_act3_event6"
+		"character_levels_Sylvando character_levels_Jade character_levels_Rab character_levels_Eight game_progress_act1_event4 game_progress_act2_event7 game_progress_act2_event8 game_progress_act3_event7 game_progress_act3_event8";
   
-    grid-template-columns: 0.6fr 0.6fr 0.6fr 0.6fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 0.6fr 0.6fr 0.6fr 0.6fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2fr 1.5fr 1fr 1fr 1fr 1fr;
     border: 3px solid rgb(214,129,137);
 }
 
 .header_main_grid > * {
-    border: 1px solid rgb(214,129,0);
+    /*border: 1px solid rgb(214,129,0);*/
 }
 
 .character_levels_header {
@@ -35,6 +37,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	font-size: 2.5vh;
+	font-weight: bolder;
 }
 
 .character_levels_Hero {
@@ -98,6 +102,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	font-size: 2.5vh;
+	font-weight: bolder;
 }
 
 .game_progress_act1_header {
@@ -105,6 +111,9 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	font-size: 2.1vh;
+	font-weight: bold;
+	border-bottom: 1px solid rgb(214,129,0);
 }
 
 .game_progress_act2_header {
@@ -112,6 +121,9 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	font-size: 2.1vh;
+	font-weight: bold;
+	text-decoration: underline rgb(214,129,0) solid;
 }
 
 .game_progress_act3_header {
@@ -119,6 +131,9 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	font-size: 2.1vh;
+	font-weight: bold;
+	text-decoration: underline rgb(214,129,0) solid;
 }
 
 .game_progress_act1_event1 {
@@ -177,6 +192,34 @@
 	justify-content: center;
 }
 
+.game_progress_act2_event5 {
+    grid-area: game_progress_act2_event5;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act2_event6 {
+    grid-area: game_progress_act2_event6;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act2_event7 {
+    grid-area: game_progress_act2_event7;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act2_event8 {
+    grid-area: game_progress_act2_event8;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .game_progress_act3_event1 {
     grid-area: game_progress_act3_event1;
 	display: flex;
@@ -200,6 +243,34 @@
 
 .game_progress_act3_event4 {
     grid-area: game_progress_act3_event4;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act3_event5 {
+    grid-area: game_progress_act3_event5;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act3_event6 {
+    grid-area: game_progress_act3_event6;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act3_event7 {
+    grid-area: game_progress_act3_event7;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act3_event8 {
+    grid-area: game_progress_act3_event8;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -263,3 +334,49 @@
 	box-shadow: -2px 2px 0 #D1D1D1;
 }
 */
+
+/**************/
+/*    Main    */
+/**************/
+/* Grid containing the main content of the body */
+.main_grid {
+    /* grid fallback (if grid not supported) */
+
+    /* if supported */
+    flex-grow: 1;
+    flex-basis: 100%;
+    display: inline-grid;
+  
+    grid-template-areas:
+        "skill_tree spell_chart"
+        "skill_tree ability_chart"
+		"skill_tree pep_power_chart";
+  
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 0px;
+}
+
+.main_grid > * {
+    border: 1px solid rgb(214,129,0);
+}
+
+.skill_tree{
+	grid-area: skill_tree;
+	display: flex;
+}
+
+.spell_chart{
+	grid-area: spell_chart;
+	display: flex;
+}
+
+.ability_chart{
+	grid-area: ability_chart;
+	display: flex;
+}
+
+.pep_power_chart{
+	grid-area: pep_power_chart;
+	display: flex;
+}

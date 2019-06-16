@@ -40,6 +40,10 @@ body {
                 user-select: none;
 }
 
+underlined_header{
+    /* placeholder */
+}
+
 h2 {
     /* placeholder */
 }
@@ -83,10 +87,12 @@ p {
     display: flex;
     flex-direction: row;
     padding: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .nav_tabs {
     grid-area: nav_tabs;
+    background-color: var(--header-background);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -95,7 +101,7 @@ p {
     margin: 0;
     padding: 0.05% 0.03% 0 0.026%;
     list-style: none;
-    border-bottom: 2px solid rgb(37,24,156);
+    border-bottom: 2px solid var(--header-background);
 }
 
 .main {
@@ -156,7 +162,7 @@ p {
 }
 
 #info {
-    font-size: 15px;
+    font-size: 1.4vh; /* 13 px */
     margin-right: auto;
     font-weight: bold;
 }
@@ -166,9 +172,10 @@ p {
 /**************************/
 .nav_tabs li {
     width: 12.3%; /*12.5% */
+    background-color: var(--body-background);
     border-top: 1px solid rgb(37,24,156);
-    border-left: 1px solid rgb(37,24,156);
-    border-right: 1px solid rgb(37,24,156);
+    border-left: 1px solid var(--body-background);
+    border-right: 1px solid var(--body-background);
     border-top-left-radius: 12px;
 	border-top-right-radius: 12px;
     box-shadow: 0 3px 3px rgba(34, 36, 58, 0.4), inset 0 2px 0 rgba(109, 158, 223, 0.39);
