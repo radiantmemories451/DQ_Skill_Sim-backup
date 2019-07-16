@@ -7,56 +7,46 @@
     <meta property="og:description" content="Create a build for any character in Dragon Quest XI">
     <meta property="og:site_name" content="GitHub">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://andrealh.github.io/DQ_Skill_Sim-test/dqxi/">
+    <meta property="og:url" content="https://andrealh.github.io/DQ_Skill_Sim/dqxi/">
     <meta property="og:image" content="../resources/dragon-quest-xi-logo.png">
     <link rel="icon" sizes="48x48" type="image/x-icon" href="../resources/dragon_quest_xi_favicon.ico">
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
     <link rel="stylesheet" type="text/css" href="../css/dqxi_styles.css">
     <script type="text/javascript" src="../DQ_Skill_Sim-test/js/lz-string.min.js"></script>
-    <script type="text/javascript" src="../DQ_Skill_Sim-test/js/simulator.js"></script>
-    <script type="text/javascript" src="../DQ_Skill_Sim-test/js/eoxsimulator.js"></script>
-    <script type="text/javascript" src="../DQ_Skill_Sim-test/data/eox/skills.js"></script>
-    <script type="text/javascript" src="../DQ_Skill_Sim-test/data/eox/forward.js"></script>
+    <script type="text/javascript" src="../js/simulator.js"></script>
+    <script type="text/javascript" src="../dqxi/dqxi_simulator.js"></script>
+    <script type="text/javascript" src="../dqxi/dqxi_skills.js"></script>
+    <script type="text/javascript" src="../dqxi/dqxi_skills_forward_reqs.js"></script>
     <script type="text/javascript" src="../DQ_Skill_Sim-test/data/eox/levels.js"></script>
 </head>
   
 <body class="blue-theme">
     <div class="page_grid">
+        <!--
+            Section header comment goes here
+        -->
         <div class="header">
             <div> <!-- logo and info div -->
-                <img src="../resources/dragon-quest-xi-logo.png" height="140px" />
-                <p id="info">
+                <img src="../resources/dragon-quest-xi-logo.png" height="100px" /> <!--120px, changed for testing purposes-->
                 <br>
-                Skill Simulator, by radiantmemories451
-                </p>
+                <div id="info">
+                    by radiantmemories451
+                </div>
             </div>
 
             <div class="header_main_grid"> <!-- main header content div -->
+                <div class="title">
+                    DQXI Skill Simulator
+                </div>
+
                 <!-- row 1 -->
                 <div class="character_levels_header">
-                    <strong>Level</strong>
-                </div>
-
-                <div class="game_progress_header">
-                    <strong>Game Progress</strong>
+                    Level
                 </div>
 
                 <!-- row 2 -->
-                <div class="game_progress_act1_header">
-                    <strong>Act 1</strong>
-                </div>
-
-                <div class="game_progress_act2_header">
-                    <strong>Act 2</strong>
-                </div>
-
-                <div class="game_progress_act3_header">
-                    <strong>Act 3</strong>
-                </div>
-                
-                <!-- row 2 -->
-                <div class="character_levels_Hero">
-                    <strong>Hero</strong>
+                <div class="character_levels_Luminary">
+                    <strong> Luminary </strong>
 
                     <!--
                     <select id="levelDropdown" onchange="changeLevel()">
@@ -64,182 +54,104 @@
                     -->
 
                     <select id="level">
-                        <option value="0">
-                            0
+                        <option value="1">
+                            1
                         </option>
                     </select>
                 </div>
 
                 <div class="character_levels_Erik">
-                    <strong>Erik</strong>
+                    <strong>Erik </strong>
                     <select id="level">
-                        <option value="0">
-                            0
+                        <option value="5">
+                            5
                         </option>
                     </select>
                 </div>
 
                 <div class="character_levels_Veronica">
-                    <strong>Veronica</strong>
+                    <strong>Veronica </strong>
                     <select id="level">
-                        <option value="0">
-                            0
+                        <option value="12">
+                            12
                         </option>
                     </select>
                 </div>
 
                 <div class="character_levels_Serena">
-                    <strong>Serena</strong>
+                    <strong>Serena </strong>
                     <select id="level">
-                        <option value="0">
-                            0
+                        <option value="12">
+                            12
                         </option>
                     </select>
                 </div>
 
-                <div class="game_progress_act1_event1">
-                    <strong>Act 1</strong>
-                    <select id="retire">
-                        <option value="N/A">
-                            N/A
-                        </option>
-                    </select>
-                </div>
-
-                <div class="game_progress_act1_event2">
-                    <strong>Act 1</strong>
-                    <select id="retire">
-                        <option value="N/A">
-                            N/A
-                        </option>
-                    </select>
-                </div>
-
-                <div class="game_progress_act2_event1">
-                    <strong>Act 2</strong>
-                    <select id="retire">
-                        <option value="N/A">
-                            N/A
-                        </option>
-                    </select>
-                </div>
-
-                <div class="game_progress_act2_event2">
-                    <strong>Act 2</strong>
-                    <select id="retire">
-                        <option value="N/A">
-                            N/A
-                        </option>
-                    </select>
-                </div>
-
-                <div class="game_progress_act3_event1">
-                    <strong>Act 3</strong>
-                    <select id="retire">
-                        <option value="N/A">
-                            N/A
-                        </option>
-                    </select>
-                </div>
-
-                <div class="game_progress_act3_event2">
-                    <strong>Act 3</strong>
-                    <select id="retire">
-                        <option value="N/A">
-                            N/A
-                        </option>
-                    </select>
-                </div>
-
-                <!-- row 3 -->
                 <div class="character_levels_Sylvando">
-                    <strong>Sylvando</strong>
+                    <strong>Sylvando </strong>
                     <select id="level">
-                        <option value="0">
-                            0
+                        <option value="15">
+                            15
                         </option>
                     </select>
                 </div>
 
                 <div class="character_levels_Jade">
-                    <strong>Jade</strong>
+                    <strong>Jade </strong>
                     <select id="level">
-                        <option value="0">
-                            0
+                        <option value="23">
+                            23
                         </option>
                     </select>
                 </div>
 
                 <div class="character_levels_Rab">
-                    <strong>Rab</strong>
+                    <strong>Rab </strong>
                     <select id="level">
-                        <option value="0">
-                            0
+                        <option value="23">
+                            23
                         </option>
                     </select>
                 </div>
 
                 <div class="character_levels_Eight">
-                    <strong>Eight</strong>
+                    <strong>Eight </strong>
                     <select id="level">
-                        <option value="0">
-                            0
+                        <option value="36">
+                            36
                         </option>
                     </select>
                 </div>
 
-                <div class="game_progress_act1_event3">
-                    <strong>Act 1</strong>
-                    <select id="retire">
-                        <option value="N/A">
-                            N/A
-                        </option>
-                    </select>
+                <!-- row 1 -->
+                <div class="game_progress_header">
+                    Game Progress
                 </div>
 
-                <div class="game_progress_act1_event4">
-                    <strong>Act 1</strong>
-                    <select id="retire">
-                        <option value="N/A">
-                            N/A
-                        </option>
-                    </select>
+                <!-- row 2 -->
+                <div class="game_progress_act1_header">
+                    Act 1
                 </div>
 
-                <div class="game_progress_act2_event3">
-                    <strong>Act 2</strong>
-                    <select id="retire">
-                        <option value="N/A">
-                            N/A
-                        </option>
-                    </select>
+                <div class="game_progress_act2_header">
+                    Act 2
                 </div>
 
-                <div class="game_progress_act2_event4">
-                    <strong>Act 2</strong>
-                    <select id="retire">
-                        <option value="N/A">
-                            N/A
-                        </option>
-                    </select>
+                <div class="game_progress_act3_header">
+                    Act 3
                 </div>
 
-                <div class="game_progress_act3_event3">
-                    <strong>Act 3</strong>
-                    <select id="retire">
-                        <option value="N/A">
-                            N/A
-                        </option>
-                    </select>
+                <!-- row 3 -->
+                <div class="game_progress_act1_content">
+                    <button class="game_progress_button" id="game_progress_act1_button" onclick="showPopup(event)">Act 1</button>
                 </div>
 
-                <div class="game_progress_act3_event4">
-                    <strong>Act 3</strong>
-                    <select id="retire">
-                        <option value="N/A">
-                            N/A
-                        </option>
-                    </select>
+                <div class="game_progress_act2_content">
+                    <button class="game_progress_button" id="game_progress_act2_button" onclick="showPopup(event)">Act 2</button>
+                </div>
+                
+                <div class="game_progress_act3_content">
+                    <button class="game_progress_button" id="game_progress_act3_button" onclick="showPopup(event)">Act 3</button>
                 </div>
             </div> <!-- close div "header_main_grid" -->
 
@@ -259,138 +171,351 @@
             </div> <!-- close div "header-links" -->
         </div> <!-- close div "header" -->
 
+
+        <!--
+            Section header comment goes here
+        -->
         <ul class="nav_tabs">
            <!-- <ul class="nav_tabs"> -->
-                <li>
+                <li id="nav_tab_Luminary" onclick="selectTab(event)">
                     <a href="#">
                         <!--
                         <svg viewBox="0 0 100 100" class="icon">
                             <use xlink:href="#leaf">
                         </svg>
                         -->
-                        <img class="nav_tabs_icons" src="../resources/dragon_quest_xi-hero.png" />
+                        <img class="nav_tabs_icons" src="../resources/dragon_quest_xi-luminary.png" />
                         <div id="spacer">
                         </div>
                         <div>
-                            Hero
+                            Luminary
                         </div>
                         <div id="spacer2">
                         </div>
                     </a>
                 </li>
 
-                <li>
+                <li id="nav_tab_Erik" onclick="selectTab(event)">
                     <a href="#">
                         <!--
                         <svg viewBox="0 0 100 100" class="icon">
                             <use xlink:href="#leaf">
                         </svg>
                         -->
-                        <img class="nav_tabs_icons" src="../resources/dragon_quest_xi-hero.png" />
+                        <img class="nav_tabs_icons" src="../resources/dragon_quest_xi-Erik.png" />
                         <br>
+                        <div id="spacer">
+                        </div>
                         <div>
                             Erik
                         </div>
+                        <div id="spacer2">
+                        </div>
                     </a>
                 </li>
 
-                <li>
+                <li id="nav_tab_Veronica" onclick="selectTab(event)">
                     <a href="#">
                         <!--
                         <svg viewBox="0 0 100 100" class="icon">
                             <use xlink:href="#leaf">
                         </svg>
                         -->
-                        <img class="nav_tabs_icons" src="../resources/dragon_quest_xi-hero.png" />
+                        <img class="nav_tabs_icons" src="../resources/dragon_quest_xi-Veronica.png" />
                         <br>
+                        <div id="spacer">
+                        </div>
                         <div>
                             Veronica
                         </div>
+                        <div id="spacer2">
+                        </div>
                     </a>
                 </li>
 
-                <li>
+                <li id="nav_tab_Serena" onclick="selectTab(event)">
                     <a href="#">
                         <!--
                         <svg viewBox="0 0 100 100" class="icon">
                             <use xlink:href="#leaf">
                         </svg>
                         -->
-                        <img class="nav_tabs_icons" src="../resources/dragon_quest_xi-hero.png" />
+                        <img class="nav_tabs_icons" src="../resources/dragon_quest_xi-Serena.png" />
                         <br>
+                        <div id="spacer">
+                        </div>
                         <div>
                             Serena
                         </div>
+                        <div id="spacer2">
+                        </div>
                     </a>
                 </li>
 
-                <li>
+                <li id="nav_tab_Sylvando" onclick="selectTab(event)">
                     <a href="#">
                         <!--
                         <svg viewBox="0 0 100 100" class="icon">
                             <use xlink:href="#leaf">
                         </svg>
                         -->
-                        <img class="nav_tabs_icons" src="../resources/dragon_quest_xi-hero.png" />
+                        <img class="nav_tabs_icons" src="../resources/dragon_quest_xi-Sylvando.png" />
                         <br>
+                        <div id="spacer">
+                        </div>
                         <div>
                             Sylvando
                         </div>
+                        <div id="spacer2">
+                        </div>
                     </a>
                 </li>
 
-                <li>
+                <li id="nav_tab_Jade" onclick="selectTab(event)">
                     <a href="#">
                         <!--
                         <svg viewBox="0 0 100 100" class="icon">
                             <use xlink:href="#leaf">
                         </svg>
                         -->
-                        <img class="nav_tabs_icons" src="../resources/dragon_quest_xi-hero.png" />
+                        <img class="nav_tabs_icons" src="../resources/dragon_quest_xi-Jade.png" />
                         <br>
+                        <div id="spacer">
+                        </div>
                         <div>
                             Jade
                         </div>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <!--
-                        <svg viewBox="0 0 100 100" class="icon">
-                            <use xlink:href="#leaf">
-                        </svg>
-                        -->
-                        <img class="nav_tabs_icons" src="../resources/dragon_quest_xi-hero.png" />
-                        <br>
-                        <div>
-                            Rab
+                        <div id="spacer2">
                         </div>
                     </a>
                 </li>
 
-                <li>
+                <li id="nav_tab_Rab" onclick="selectTab(event)">
                     <a href="#">
                         <!--
                         <svg viewBox="0 0 100 100" class="icon">
                             <use xlink:href="#leaf">
                         </svg>
                         -->
-                        <img class="nav_tabs_icons" src="../resources/dragon_quest_xi-hero.png" />
+                        <img class="nav_tabs_icons" src="../resources/dragon_quest_xi-Rab.png" />
                         <br>
+                        <div id="spacer">
+                        </div>
+                        <div>
+                            Rab
+                        </div>
+                        <div id="spacer2">
+                        </div>
+                    </a>
+                </li>
+
+                <li id="nav_tab_Eight" onclick="selectTab(event)">
+                    <a href="#">
+                        <!--
+                        <svg viewBox="0 0 100 100" class="icon">
+                            <use xlink:href="#leaf">
+                        </svg>
+                        -->
+                        <img class="nav_tabs_icons" src="../resources/dragon_quest_xi-Hendrik.png" />
+                        <br>
+                        <div id="spacer">
+                        </div>
                         <div>
                             Eight
+                        </div>
+                        <div id="spacer2">
                         </div>
                     </a>
                 </li>
            <!-- </ul> -->
         </ul>
 
+
+        <!--
+            Section header comment goes here
+        -->
         <div class="main">
-            <div class="tree" id="tree-primary"></div>
-            <div class="tree" id="tree-secondary"></div>
+            <!--  -->
+            <div class="main_grid" id="main_grid_Luminary">
+                <div class="skill_tree">
+                    Luminary skill tree goes here
+                </div>
+                
+                <div class="spell_chart">
+                    Chart goes here
+                </div> <!-- close div spell_chart -->
+
+                <div class="ability_chart">
+                    Chart goes here
+                </div> <!-- close div abillity_chart -->
+
+                <div class="pep_power_chart">
+                    Chart goes here
+                </div> <!-- close div pep_power_chart -->
+
+                <div class="stat_boost_chart">
+                    Chart goes here
+                </div> <!-- close div stat_boost_chart -->
+            </div> <!-- close div "main_grid" -->
+
+            <div class="main_grid" id="main_grid_Erik">
+                <div class="skill_tree">
+                    Erik skill tree goes here
+                </div> <!-- close div skill_tree -->
+                
+                <div class="spell_chart">
+                    Chart goes here
+                </div> <!-- close div spell_chart -->
+
+                <div class="ability_chart">
+                    Chart goes here
+                </div> <!-- close div abillity_chart -->
+
+                <div class="pep_power_chart">
+                    Chart goes here
+                </div> <!-- close div pep_power_chart -->
+
+                <div class="stat_boost_chart">
+                    Chart goes here
+                </div> <!-- close div stat_boost_chart -->
+            </div> <!-- close div "main_grid" -->
+
+            <div class="main_grid" id="main_grid_Veronica">
+                <div class="skill_tree">
+                    Veronica skill tree goes here
+                </div>
+                
+                <div class="spell_chart">
+                    Chart goes here
+                </div> <!-- close div spell_chart -->
+
+                <div class="ability_chart">
+                    Chart goes here
+                </div> <!-- close div abillity_chart -->
+
+                <div class="pep_power_chart">
+                    Chart goes here
+                </div> <!-- close div pep_power_chart -->
+
+                <div class="stat_boost_chart">
+                    Chart goes here
+                </div> <!-- close div stat_boost_chart -->
+            </div> <!-- close div "main_grid" -->
+
+            <div class="main_grid" id="main_grid_Serena">
+                <div class="skill_tree">
+                    Serena skill tree goes here
+                </div>
+                
+                <div class="spell_chart">
+                    Chart goes here
+                </div> <!-- close div spell_chart -->
+
+                <div class="ability_chart">
+                    Chart goes here
+                </div> <!-- close div abillity_chart -->
+
+                <div class="pep_power_chart">
+                    Chart goes here
+                </div> <!-- close div pep_power_chart -->
+
+                <div class="stat_boost_chart">
+                    Chart goes here
+                </div> <!-- close div stat_boost_chart -->
+            </div> <!-- close div "main_grid" -->
+
+            <div class="main_grid" id="main_grid_Sylvando">
+                <div class="skill_tree">
+                    Sylvando skill tree goes here
+                </div>
+                
+                <div class="spell_chart">
+                    Chart goes here
+                </div> <!-- close div spell_chart -->
+
+                <div class="ability_chart">
+                    Chart goes here
+                </div> <!-- close div abillity_chart -->
+
+                <div class="pep_power_chart">
+                    Chart goes here
+                </div> <!-- close div pep_power_chart -->
+
+                <div class="stat_boost_chart">
+                    Chart goes here
+                </div> <!-- close div stat_boost_chart -->
+            </div> <!-- close div "main_grid" -->
+
+            <div class="main_grid" id="main_grid_Jade">
+                <div class="skill_tree">
+                    Jade skill tree goes here
+                </div>
+                
+                <div class="spell_chart">
+                    Chart goes here
+                </div> <!-- close div spell_chart -->
+
+                <div class="ability_chart">
+                    Chart goes here
+                </div> <!-- close div abillity_chart -->
+
+                <div class="pep_power_chart">
+                    Chart goes here
+                </div> <!-- close div pep_power_chart -->
+
+                <div class="stat_boost_chart">
+                    Chart goes here
+                </div> <!-- close div stat_boost_chart -->
+            </div> <!-- close div "main_grid" -->
+
+            <div class="main_grid" id="main_grid_Rab">
+                <div class="skill_tree">
+                    Rab skill tree goes here
+                </div>
+                
+                <div class="spell_chart">
+                    Chart goes here
+                </div> <!-- close div spell_chart -->
+
+                <div class="ability_chart">
+                    Chart goes here
+                </div> <!-- close div abillity_chart -->
+
+                <div class="pep_power_chart">
+                    Chart goes here
+                </div> <!-- close div pep_power_chart -->
+
+                <div class="stat_boost_chart">
+                    Chart goes here
+                </div> <!-- close div stat_boost_chart -->
+            </div> <!-- close div "main_grid" -->
+
+            <div class="main_grid" id="main_grid_Eight">
+                <div class="skill_tree">
+                    Eight skill tree goes here
+                </div>
+                
+                <div class="spell_chart">
+                    Chart goes here
+                </div> <!-- close div spell_chart -->
+
+                <div class="ability_chart">
+                    Chart goes here
+                </div> <!-- close div abillity_chart -->
+
+                <div class="pep_power_chart">
+                    Chart goes here
+                </div> <!-- close div pep_power_chart -->
+
+                <div class="stat_boost_chart">
+                    Chart goes here
+                </div> <!-- close div stat_boost_chart -->
+            </div> <!-- close div "main_grid" -->
         </div> <!-- close div "main" -->
         
+        <!--
+            Section header comment goes here
+        -->
         <div class="footer">
             <p>
                 footer

@@ -16,18 +16,34 @@
     display: inline-grid;
   
     grid-template-areas:
-        "character_levels_header character_levels_header character_levels_header character_levels_header game_progress_header game_progress_header game_progress_header game_progress_header game_progress_header game_progress_header"
-		"filler filler filler filler game_progress_act1_header game_progress_act1_header game_progress_act2_header game_progress_act2_header game_progress_act3_header game_progress_act3_header"
-        "character_levels_Hero character_levels_Erik character_levels_Veronica character_levels_Serena game_progress_act1_event1 game_progress_act1_event2 game_progress_act2_event1 game_progress_act2_event2 game_progress_act3_event1 game_progress_act3_event2 "
-        "character_levels_Sylvando character_levels_Jade character_levels_Rab character_levels_Eight game_progress_act1_event3 game_progress_act1_event4 game_progress_act2_event3 game_progress_act2_event4 game_progress_act3_event3 game_progress_act3_event4";
-  
-    grid-template-columns: 0.6fr 0.6fr 0.6fr 0.6fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    border: 3px solid rgb(214,129,137);
+		"title title title title title title title"
+		"character_levels_header character_levels_header character_levels_header character_levels_header game_progress_header game_progress_header game_progress_header"
+		"character_levels_Luminary character_levels_Erik character_levels_Veronica character_levels_Serena game_progress_act1_header game_progress_act2_header game_progress_act3_header"
+        "character_levels_Sylvando character_levels_Jade character_levels_Rab character_levels_Eight game_progress_act1_content game_progress_act2_content game_progress_act3_content";
+
+		/*
+		"character_levels_header character_levels_header character_levels_header character_levels_header game_progress_header game_progress_header game_progress_header"
+		"character_levels_Luminary character_levels_Erik character_levels_Veronica character_levels_Serena game_progress_act1_header game_progress_act2_header game_progress_act3_header"
+        "character_levels_Sylvando character_levels_Jade character_levels_Rab character_levels_Eight game_progress_act1_content game_progress_act2_content game_progress_act3_content";
+		*/
+
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.3 0.3fr 0.3fr 0.3fr;
+    /* border: 3px solid rgb(214,129,137); */
 }
 
 .header_main_grid > * {
-    border: 1px solid rgb(214,129,0);
+    /* border: 1px solid rgb(214,129,0); */
+}
+
+.title {
+	grid-area: title;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2.4vh;
+	font-weight: bolder;
+	text-decoration: underline rgb(214,129,0) solid;
 }
 
 .character_levels_header {
@@ -35,10 +51,12 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	font-size: 2.3vh;
+	font-weight: bolder;
 }
 
-.character_levels_Hero {
-    grid-area: character_levels_Hero;
+.character_levels_Luminary {
+    grid-area: character_levels_Luminary;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -98,6 +116,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	font-size: 2.3vh;
+	font-weight: bolder;
 }
 
 .game_progress_act1_header {
@@ -105,6 +125,9 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	font-size: 2.1vh;
+	font-weight: bold;
+	border-bottom: 1px solid rgb(214,129,0);
 }
 
 .game_progress_act2_header {
@@ -112,6 +135,9 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	font-size: 2.1vh;
+	font-weight: bold;
+	text-decoration: underline rgb(214,129,0) solid;
 }
 
 .game_progress_act3_header {
@@ -119,6 +145,56 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	font-size: 2.1vh;
+	font-weight: bold;
+	text-decoration: underline rgb(214,129,0) solid;
+}
+
+.game_progress_act1_content {
+	grid-area: game_progress_act1_content;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.7vh;
+	font-weight: bold;
+}
+
+.game_progress_act2_content {
+	grid-area: game_progress_act2_content;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.7vh;
+	font-weight: bold;
+}
+
+.game_progress_act3_content {
+	grid-area: game_progress_act3_content;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.7vh;
+	font-weight: bold;
+}
+
+
+/* act 1 popup */
+.game_progress_act1_popup {
+    flex-grow: 1;
+    flex-basis: 100%;
+    display: inline-grid;
+  
+    grid-template-areas:
+		"game_progress_act1_header"
+		"game_progress_act1_event1"
+		"game_progress_act1_event2"
+		"game_progress_act1_event3"
+        "game_progress_act1_event4";
+
+		
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.3fr 0.3fr 0.3fr 0.3fr 0.3fr;
+    /* border: 3px solid rgb(214,129,137); */
 }
 
 .game_progress_act1_event1 {
@@ -149,6 +225,27 @@
 	justify-content: center;
 }
 
+
+/* act 2 popup */
+.game_progress_act2_popup {
+    flex-grow: 1;
+    flex-basis: 100%;
+    display: inline-grid;
+  
+    grid-template-areas:
+		"game_progress_act2_header game_progress_act2_header game_progress_act2_header"
+		"game_progress_act2_event1 game_progress_act2_event2 game_progress_act2_event3"
+		"game_progress_act2_event4 game_progress_act2_event5 game_progress_act2_event6"
+		"game_progress_act2_event7 game_progress_act2_event8 game_progress_act2_event9"
+        "game_progress_act2_event10 game_progress_act2_event11 game_progress_act2_event12";
+
+		
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.3 0.3fr 0.3fr 0.3fr;
+    /* border: 3px solid rgb(214,129,137); */
+}
+
+
 .game_progress_act2_event1 {
     grid-area: game_progress_act2_event1;
 	display: flex;
@@ -177,6 +274,74 @@
 	justify-content: center;
 }
 
+.game_progress_act2_event5 {
+    grid-area: game_progress_act2_event5;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act2_event6 {
+    grid-area: game_progress_act2_event6;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act2_event7 {
+    grid-area: game_progress_act2_event7;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act2_event8 {
+    grid-area: game_progress_act2_event8;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act2_event9 {
+    grid-area: game_progress_act2_event9;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act2_event10 {
+    grid-area: game_progress_act2_event10;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act2_event11 {
+    grid-area: game_progress_act2_event11;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+/* act 3 popup */
+.game_progress_act3_popup {
+    flex-grow: 1;
+    flex-basis: 100%;
+    display: inline-grid;
+  
+    grid-template-areas:
+		"game_progress_act3_header game_progress_act3_header game_progress_act3_header"
+		"game_progress_act3_event1 game_progress_act3_event2 game_progress_act3_event3"
+		"game_progress_act3_event4 game_progress_act3_event5 game_progress_act3_event6"
+		"game_progress_act3_event7 game_progress_act3_event8 game_progress_act3_event9";
+
+		
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.3fr 0.3fr 0.3fr 0.3fr;
+    /* border: 3px solid rgb(214,129,137); */
+}
+
 .game_progress_act3_event1 {
     grid-area: game_progress_act3_event1;
 	display: flex;
@@ -203,6 +368,54 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.game_progress_act3_event5 {
+    grid-area: game_progress_act3_event5;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act3_event6 {
+    grid-area: game_progress_act3_event6;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act3_event7 {
+    grid-area: game_progress_act3_event7;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act3_event8 {
+    grid-area: game_progress_act3_event8;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.game_progress_act3_event9 {
+    grid-area: game_progress_act3_event9;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+/* */
+.game_progress_button {
+width:30%;
+height: 2.5vh;
+border-radius:3px;
+background-color:rgb(44, 105, 155);
+color: #F2B14D;
+font-family: Helvetica, Arial;
+font-size: 1.5vh;
+cursor:pointer;
 }
 
 /**************/
@@ -263,3 +476,54 @@
 	box-shadow: -2px 2px 0 #D1D1D1;
 }
 */
+
+/**************/
+/*    Main    */
+/**************/
+/* Grid containing the main content of the body */
+.main_grid {
+    /* grid fallback (if grid not supported) */
+
+    /* if supported */
+    flex-grow: 1;
+    flex-basis: 100%;
+    display: inline-grid;
+  
+    grid-template-areas:
+        "skill_tree spell_chart"
+        "skill_tree ability_chart"
+		"skill_tree pep_power_chart"
+		"skill_tree stat_boost_chart";
+  
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.main_grid > * {
+    border: 1px solid rgb(214,129,0);
+}
+
+.skill_tree {
+	grid-area: skill_tree;
+	display: flex;
+}
+
+.spell_chart {
+	grid-area: spell_chart;
+	display: flex;
+}
+
+.ability_chart {
+	grid-area: ability_chart;
+	display: flex;
+}
+
+.pep_power_chart {
+	grid-area: pep_power_chart;
+	display: flex;
+}
+
+.stat_boost_chart {
+	grid-area: stat_boost_chart;
+	display: flex;
+}
