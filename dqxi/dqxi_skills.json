@@ -1,69 +1,69 @@
-let skills = {
-    Swords: {
-        DragonSlash: {
-            name: "Dragon Slash",
-            description: "", //placeholder
-            effect: "Deals 2x damage to a single enemy if dragon-type, 1x damage otherwise.",
-            formula: "DMG * 1.2 + 5",
-            damageType: null, //placeholder
-            target: "single",
-            cost: "10P", 
-            reqLevel: 0 //placeholder
+{ // skill = {...json...} -> skill['Swords']['DragonSlash']['for']
+    "Swords": {
+        "DragonSlash": {
+            "name": "Dragon Slash",
+            "description": "", //placeholder
+            "effect": "Deals 2x damage to a single enemy if dragon-type, 1x damage otherwise.",
+            "formula": "DMG * 1.2 + 5",
+            "damageType": null, //placeholder
+            "target": "single",
+            "cost": "10P", 
+            "reqLevel": 0 //placeholder
         },
 
-        FatalFlash: {
-            name: "Fatal Flash",
-            description: "",
-            effect: "",
-            formula: "",
-            damageType: null,
-            target: "",
-            cost: "20P", 
-            reqLevel: 0
+        "FatalFlash": {
+            "name": "Fatal Flash",
+            "description": "",
+            "effect": "",
+            "formula": "",
+            "damageType": null,
+            "target": "",
+            "cost": "20P", 
+            "reqLevel": 0
         },
         
-        FlameSlash: {
-            name: "Flame Slash",
-            description: "",
-            effect: "",
-            formula: "",
-            damageType: null,
-            target: "",
-            cost: "3P", 
-            reqLevel: 0
+        "FlameSlash": {
+            "name": "Flame Slash",
+            "description": "",
+            "effect": "",
+            "formula": "",
+            "damageType": null,
+            "target": "",
+            "cost": "3P", 
+            "reqLevel": 0
         },
 
-        MetalSlash: {
-            name: "Metal Slash",
-            description: "",
-            effect: "",
-            formula: "",
-            damageType: null,
-            target: "",
-            cost: "12P", 
-            reqLevel: 0
+        "MetalSlash": {
+            "name": "Metal Slash",
+            "description": "",
+            "effect": "",
+            "formula": "",
+            "damageType": null,
+            "target": "",
+            "cost": "12P", 
+            "reqLevel": 0
         },
 
-        MiracleSlash: {
-            name: "Miracle Slash",
-            description: "",
-            effect: "",
-            formula: "",
-            damageType: null,
-            target: "",
-            cost: "16P", 
-            reqLevel: 0
+        "MiracleSlash": {
+            "name": "Miracle Slash",
+            "description": "",
+            "effect": "",
+            "formula": "",
+            "damageType": null,
+            "target": "",
+            "cost": "16P", 
+            "reqLevel": 0
         },
 
-        SwordStance: {
-            name: "Sword Stance",
-            description: "",
-            effect: "",
-            formula: "",
-            damageType: null,
-            target: "",
-            cost: "7P", 
-            reqLevel: 0
+        "SwordStance": {
+            "name": "Sword Stance",
+            "description": "",
+            "effect": "",
+            "formula": "",
+            "damageType": null,
+            "target": "",
+            "cost": "7P", 
+            "reqLevel": 0
         },
 
         //passive skills
@@ -111,7 +111,7 @@ let skills = {
         }
     },
 
-    Greatswords: {
+    "Greatswords": {
         //active skills
         CuttingEdge: {
 
@@ -171,7 +171,7 @@ let skills = {
         }
     },
 
-    Knives: {
+    "Knives": {
         //active skills
         "Assassin'sStab": {
 
@@ -230,7 +230,7 @@ let skills = {
         }
     },
 
-    Boomerangs: {
+    "Boomerangs": {
         //active skills
         DoubleDown: {
 
@@ -271,7 +271,7 @@ let skills = {
         }
     },
 
-    Wands: {
+    "Wands": {
         //active skills
         AlmaMatter: {
 
@@ -340,7 +340,7 @@ let skills = {
         },
     },
 
-    HeavyWands: {
+    "HeavyWands": {
         //active skills
 
         
@@ -350,7 +350,7 @@ let skills = {
         //stat boosts
     },
 
-    Spears: {
+    "Spears": {
         //active skills
         BeLikeWater: {
 
@@ -436,7 +436,7 @@ let skills = {
         }
     },
 
-    Whips: {
+    "Whips": {
         //active skills
 
         
@@ -446,7 +446,7 @@ let skills = {
         //stat boosts
     },
 
-    Claws: {
+    "Claws": {
         //active skills
 
         
@@ -456,7 +456,7 @@ let skills = {
         //stat boosts
     },
 
-    Axes: {
+    "Axes": {
         //active skills
 
         
@@ -466,7 +466,7 @@ let skills = {
         //stat boosts
     },
 
-    Shields: {
+    "Shields": {
         //active skills
 
         
@@ -476,7 +476,7 @@ let skills = {
         //stat boosts
     },
 
-    Swordmastery: {
+    "Swordmastery": {
         //active skills
 
         
@@ -486,7 +486,7 @@ let skills = {
         //stat boosts
     },
 
-    Luminary: {
+    "Luminary": {
         Zap: {},
         Poof: {},
         HolyProtection: {},
@@ -499,15 +499,15 @@ let skills = {
         BigBanga: {}
     },
 
-    Guile: {
+    "Guile": {
 
     },
 
-    Vim: {
+    "Vim": {
 
     },
 
-    Harpistry: {
+    "Harpistry": {
         DolefulDirge: {
 
         },
@@ -545,23 +545,23 @@ let skills = {
         },
     },
 
-    Litheness: {
+    "Litheness": {
 
     },
 
-    Showmanship: {
+    "Showmanship": {
 
     },
 
-    Allure: {
+    "Allure": {
 
     },
 
-    Enlightenment: {
+    "Enlightenment": {
 
     },
 
-    Heroism: {
+    "Heroism": {
         FalconSlash: {},
         "BlindMan'sBiff": {},
         DoubleUp: {},
@@ -570,11 +570,11 @@ let skills = {
         GyrfalconSlash: {}
     },
 
-    Chivalry: {
+    "Chivalry": {
 
     },
 
-    statBoosts: { //not tied to weapons
+    "statBoosts": { //not tied to weapons
         //hp
         "MaximumHP+10": {
 
