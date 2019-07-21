@@ -40,12 +40,21 @@ body {
                 user-select: none;
 }
 
-underlined_header{
-    /* placeholder */
+.underlined_header {
+    text-align: center;
+    color: #F2B14D;
+    font-family: Helvetica, Arial;
+    font-size: 2vh;
+	font-weight: bold;
+    text-decoration: underline rgb(214,129,0) solid;
 }
 
 h2 {
-    /* placeholder */
+    text-align: center;
+    color: #F2B14D;
+    font-family: Helvetica, Arial;
+    font-size: 2vh;
+	font-weight: bold;
 }
 
 p {

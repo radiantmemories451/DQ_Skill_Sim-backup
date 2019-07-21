@@ -506,24 +506,34 @@ cursor:pointer;
 .skill_tree {
 	grid-area: skill_tree;
 	display: flex;
+	color: #F2B14D;
+	font-family: Helvetica, Arial;
 }
 
 .spell_chart {
 	grid-area: spell_chart;
 	display: flex;
+	color: #F2B14D;
+	font-family: Helvetica, Arial;
 }
 
 .ability_chart {
 	grid-area: ability_chart;
 	display: flex;
+	color: #F2B14D;
+	font-family: Helvetica, Arial;
 }
 
 .pep_power_chart {
 	grid-area: pep_power_chart;
 	display: flex;
+	color: #F2B14D;
+	font-family: Helvetica, Arial;
 }
 
 .stat_boost_chart {
 	grid-area: stat_boost_chart;
 	display: flex;
+	color: #F2B14D;
+	font-family: Helvetica, Arial;
 }
