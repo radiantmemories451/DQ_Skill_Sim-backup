@@ -4,6 +4,8 @@ A webpage containing skill simulators for Dragon Quest VIII, IX, and XI.
 ## Credit
 
 Credit goes to ReinaSakuraba (https://github.com/ReinaSakuraba) whose code I used as a starting point.
+Also the people who made Dungeon and Developers.com (http://www.dungeonsanddevelopers.com), whose code I eventually
+used to change my project to using Knockout.
 
 ### Image Sources
 
@@ -20,7 +22,7 @@ DQXI:
 
 DQVIII: https://www.gamestop.com/collection/dragon-quest-8
 
-DQIX: https://www.woodus.com/den/games/dq9ds/logos.php
+DQIX: https://www.woodus.com/den/games/dq9ds/logos.php & https://i.redd.it/qebjtuwuabu21.jpg
 
 DQXI: unknown
 

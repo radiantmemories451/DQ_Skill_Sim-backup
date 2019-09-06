@@ -16,7 +16,7 @@
     display: inline-grid;
   
     grid-template-areas:
-		"title title title title title title title"
+		"title title title title title title ."
 		"character_levels_header character_levels_header character_levels_header character_levels_header game_progress_header game_progress_header game_progress_header"
 		"character_levels_Luminary character_levels_Erik character_levels_Veronica character_levels_Serena game_progress_act1_header game_progress_act2_header game_progress_act3_header"
         "character_levels_Sylvando character_levels_Jade character_levels_Rab character_levels_Eight game_progress_act1_content game_progress_act2_content game_progress_act3_content";
@@ -28,7 +28,7 @@
 		*/
 
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.3 0.3fr 0.3fr 0.3fr;
+    grid-template-rows: 3fr 0.3fr 0.3fr 0.3fr;
     /* border: 3px solid rgb(214,129,137); */
 }
 
@@ -43,7 +43,11 @@
 	justify-content: center;
 	font-size: 2.4vh;
 	font-weight: bolder;
+	color: rgb(44, 105, 155); /* placeholder, try rgb(44, 105, 155) */
 	text-decoration: underline rgb(214,129,0) solid;
+	background: url(../resources/dragon-quest-xi-title-background.png) no-repeat;
+	background-position: 47%; /*89% for v1, 91% for v2, but need to get it to 60% for both% */
+	background-size: 25% 100%;
 }
 
 .character_levels_header {
@@ -182,7 +186,7 @@
 .game_progress_act1_popup {
     flex-grow: 1;
     flex-basis: 100%;
-    display: inline-grid;
+    display: grid;
   
     grid-template-areas:
 		"game_progress_act1_header"
@@ -195,6 +199,19 @@
     grid-template-columns: 1fr;
     grid-template-rows: 0.3fr 0.3fr 0.3fr 0.3fr 0.3fr;
     /* border: 3px solid rgb(214,129,137); */
+}
+
+#game_progress_act1_popup {
+	display: none;
+	position: fixed; /* Stay in place */
+  	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 .game_progress_act1_event1 {
@@ -230,7 +247,7 @@
 .game_progress_act2_popup {
     flex-grow: 1;
     flex-basis: 100%;
-    display: inline-grid;
+    display: grid;
   
     grid-template-areas:
 		"game_progress_act2_header game_progress_act2_header game_progress_act2_header"
@@ -243,6 +260,19 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 0.3 0.3fr 0.3fr 0.3fr;
     /* border: 3px solid rgb(214,129,137); */
+}
+
+#game_progress_act2_popup {
+	display: none;
+	position: fixed; /* Stay in place */
+  	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 
@@ -328,7 +358,7 @@
 .game_progress_act3_popup {
     flex-grow: 1;
     flex-basis: 100%;
-    display: inline-grid;
+    display: grid;
   
     grid-template-areas:
 		"game_progress_act3_header game_progress_act3_header game_progress_act3_header"
@@ -340,6 +370,19 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 0.3fr 0.3fr 0.3fr 0.3fr;
     /* border: 3px solid rgb(214,129,137); */
+}
+
+#game_progress_act3_popup {
+	display: none;
+	position: fixed; /* Stay in place */
+  	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 .game_progress_act3_event1 {
@@ -408,14 +451,36 @@
 
 /* */
 .game_progress_button {
-width:30%;
-height: 2.5vh;
-border-radius:3px;
-background-color:rgb(44, 105, 155);
-color: #F2B14D;
-font-family: Helvetica, Arial;
-font-size: 1.5vh;
-cursor:pointer;
+	width:30%;
+	height: 2.5vh;
+	border-radius:3px;
+	background-color:rgb(44, 105, 155);
+	color: #F2B14D;
+	font-family: Helvetica, Arial;
+	font-size: 1.5vh;
+	cursor:pointer;
+}
+
+.popup_box {
+	background-color: rgb(44, 105, 155);
+	margin: 15% auto; /* 15% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close_button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close_button:hover,
+.close_button:focus {
+  color: #F2B14D;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /**************/

@@ -13,25 +13,25 @@
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
     <link rel="stylesheet" type="text/css" href="../css/dqxi_styles.css">
     <script type="text/javascript" src="../DQ_Skill_Sim-test/js/lz-string.min.js"></script>
-    <script type="text/javascript" src="../js/simulator.js"></script>
+    <script type='text/javascript' src="../js/jquery.min.js"></script>
+    <script type='text/javascript' src='../js/knockout-3.5.0.js'></script>
+    <script type='text/javascript' src="../js/skilltree.min.js"></script>
     <script type="text/javascript" src="../dqxi/dqxi_simulator.js"></script>
     <script type="text/javascript" src="../dqxi/dqxi_skills.js"></script>
     <script type="text/javascript" src="../dqxi/dqxi_skills_forward_reqs.js"></script>
     <script type="text/javascript" src="../DQ_Skill_Sim-test/data/eox/levels.js"></script>
 </head>
   
-<body class="blue-theme">
+  
+<body class="blue-theme" onload="init()">
     <div class="page_grid">
         <!--
             Section header comment goes here
         -->
         <div class="header">
             <div> <!-- logo and info div -->
+                <button class="home_button" onclick="location.href='../index.html'">Home</button>
                 <img src="../resources/dragon-quest-xi-logo.png" height="100px" /> <!--120px, changed for testing purposes-->
-                <br>
-                <div id="info">
-                    by radiantmemories451
-                </div>
             </div>
 
             <div class="header_main_grid"> <!-- main header content div -->
@@ -143,15 +143,171 @@
 
                 <!-- row 3 -->
                 <div class="game_progress_act1_content">
-                    <button class="game_progress_button" id="game_progress_act1_button" onclick="showPopup(event)">Act 1</button>
+                    <button class="game_progress_button" id="game_progress_act1_button" onclick="openPopup('game_progress_act1_button')">Act 1</button>
                 </div>
 
                 <div class="game_progress_act2_content">
-                    <button class="game_progress_button" id="game_progress_act2_button" onclick="showPopup(event)">Act 2</button>
+                    <button class="game_progress_button" id="game_progress_act2_button" onclick="openPopup('game_progress_act2_button')">Act 2</button>
                 </div>
                 
                 <div class="game_progress_act3_content">
-                    <button class="game_progress_button" id="game_progress_act3_button" onclick="showPopup(event)">Act 3</button>
+                    <button class="game_progress_button" id="game_progress_act3_button" onclick="openPopup('game_progress_act3_button')">Act 3</button>
+                </div>
+
+                <div class="game_progress_act1_popup" id="game_progress_act1_popup">
+                    <div class="popup_box">
+                        <span class="close_button" onclick="closePopup()">&times;</span>
+
+                        <div class="game_progress_act1_header">
+                            Act 1
+                        </div>
+
+                        <div class="game_progress_act1_event1">
+                            <strong>Erik Joins </strong>
+                        <input type="checkbox" checked="checked">
+                        
+                        </div>
+
+                        <div class="game_progress_act1_event2">
+                            <strong>Veronica & Serena Join </strong>
+                            <input type="checkbox" checked="checked">
+                        </div>
+
+                        <div class="game_progress_act1_event3">
+                            <strong>Sylvando Joins </strong>
+                            <input type="checkbox" checked="checked">
+                        </div>
+
+                        <div class="game_progress_act1_event4">
+                            <strong>Jade & Rab Join </strong>
+                            <input type="checkbox" checked="checked">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game_progress_act2_popup" id="game_progress_act2_popup">
+                    <div class= "popup_box">
+                        <span class="close_button" onclick="closePopup()">&times;</span>
+
+                        <div class="game_progress_act2_header">
+                            Act 2
+                        </div>
+
+                        <div class="game_progress_act2_event1">
+                            <strong>Eight Joins </strong>
+                            <input type="checkbox" checked="checked">
+                        </div>
+
+                        <div class="game_progress_act2_event2">
+                            <strong>Rab Rejoins </strong>
+                            <input type="checkbox" checked="checked">
+                        </div>
+
+                        <div class="game_progress_act2_event3">
+                            <strong>Sylvando Rejoins </strong>
+                            <input type="checkbox" checked="checked">
+                        </div>
+
+                        <div class="game_progress_act2_event4">
+                            <strong>Hero Regains Luminary Tree </strong>
+                            <input type="checkbox" checked="checked">
+                        </div>
+
+                        <div class="game_progress_act2_event5">
+                            <strong>Jade Rejoins </strong>
+                            <input type="checkbox" checked="checked">
+                        </div>
+
+                        <div class="game_progress_act2_event6">
+                            <strong>Erik Rejoins </strong>
+                            <input type="checkbox" checked="checked">
+                        </div>
+
+                        <div class="game_progress_act2_event7">
+                            <strong>Erik Leaves </strong>
+                            <input type="checkbox" checked="checked">
+                        </div>
+
+                        <div class="game_progress_act2_event8">
+                            <strong>Erik Rejoins </strong>
+                            <input type="checkbox" checked="checked">
+                        </div>
+
+                        <div class="game_progress_act2_event9">
+                            <strong>Erik's Skill Tree Expands </strong>
+                            <input type="checkbox" checked="checked">
+                        </div>
+
+                        <div class="game_progress_act2_event10">
+                            <strong>Serena Rejoins </strong>
+                            <input type="checkbox" checked="checked">
+                        </div>
+
+                        <div class="game_progress_act2_event11">
+                            <strong>Serena's Skill Tree Expands </strong>
+                            <input type="checkbox" checked="checked">
+                        </div>
+
+                        <div class="game_progress_act2_event12">
+                            <strong>Placeholder </strong>
+                            <input type="checkbox" checked="checked">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game_progress_act3_popup" id="game_progress_act3_popup">
+                    <div class="popup_box">
+                        <span class="close_button" onclick="closePopup()">&times;</span>
+
+                        <div class="game_progress_act3_header">
+                            Act 3
+                        </div>
+
+                        <div class="game_progress_act3_event1">
+                            <strong>Event 1</strong>
+                            <input type="checkbox" checked="checked">
+                        </div>
+
+                        <div class="game_progress_act3_event2">
+                            <strong>Event 2</strong>
+                            <input type="checkbox" checked="checked">
+                        </div>
+                        
+                        <div class="game_progress_act3_event3">
+                            <strong>Event 3 </strong>
+                            <input type="checkbox" checked="checked">
+                        </div>
+
+                        <div class="game_progress_act3_event4">
+                            <strong>Event 4 </strong>
+                            <input type="checkbox" checked="checked">
+                        </div>
+
+                        <div class="game_progress_act3_event5">
+                            <strong>Event 5</strong>
+                            <input type="checkbox" checked="checked">
+                        </div>
+
+                        <div class="game_progress_act3_event6">
+                            <strong>Event 6</strong>
+                            <input type="checkbox" checked="checked">
+                        </div>
+
+                        <div class="game_progress_act3_event7">
+                            <strong>Event 7</strong>
+                            <input type="checkbox" checked="checked">
+                        </div>
+
+                        <div class="game_progress_act3_event8">
+                            <strong>Event8</strong>
+                            <input type="checkbox" checked="checked">
+                        </div>
+
+                        <div class="game_progress_act3_event9">
+                            <strong>Event 9</strong>
+                            <input type="checkbox" checked="checked">
+                        </div>
+                    </div>
                 </div>
             </div> <!-- close div "header_main_grid" -->
 
@@ -174,20 +330,32 @@
 
         <!--
             Section header comment goes here
+            Knockout version of tabs
+        -->
+        <ul class="nav_tabs" data-bind="foreach: nav_tabs">
+            <li data-bind="text: $data, click: selectTab">
+                <a>
+                    
+                </a>
+            </li>
+        </ul>
+
+        <!--
+            Section header comment goes here
         -->
         <ul class="nav_tabs">
            <!-- <ul class="nav_tabs"> -->
-                <li id="nav_tab_Luminary" onclick="selectTab(event)">
-                    <a href="#">
+                <li id="nav_tab_Luminary" onclick="selectTab('nav_tab_Luminary')">
+                    <a id="link" href="#">
                         <!--
                         <svg viewBox="0 0 100 100" class="icon">
                             <use xlink:href="#leaf">
                         </svg>
                         -->
-                        <img class="nav_tabs_icons" src="../resources/dragon_quest_xi-luminary.png" />
+                        <img class="nav_tabs_icons" id="icon_Luminary" src="../resources/dragon_quest_xi-luminary.png" />
                         <div id="spacer">
                         </div>
-                        <div>
+                        <div id="text">
                             Luminary
                         </div>
                         <div id="spacer2">
@@ -195,14 +363,14 @@
                     </a>
                 </li>
 
-                <li id="nav_tab_Erik" onclick="selectTab(event)">
+                <li id="nav_tab_Erik" onclick="selectTab('nav_tab_Erik')">
                     <a href="#">
                         <!--
                         <svg viewBox="0 0 100 100" class="icon">
                             <use xlink:href="#leaf">
                         </svg>
                         -->
-                        <img class="nav_tabs_icons" src="../resources/dragon_quest_xi-Erik.png" />
+                        <img class="nav_tabs_icons" id="icon_Erik" src="../resources/dragon_quest_xi-Erik.png" />
                         <br>
                         <div id="spacer">
                         </div>
@@ -214,7 +382,7 @@
                     </a>
                 </li>
 
-                <li id="nav_tab_Veronica" onclick="selectTab(event)">
+                <li id="nav_tab_Veronica" onclick="selectTab('nav_tab_Veronica')">
                     <a href="#">
                         <!--
                         <svg viewBox="0 0 100 100" class="icon">
@@ -233,7 +401,7 @@
                     </a>
                 </li>
 
-                <li id="nav_tab_Serena" onclick="selectTab(event)">
+                <li id="nav_tab_Serena" onclick="selectTab('nav_tab_Serena')">
                     <a href="#">
                         <!--
                         <svg viewBox="0 0 100 100" class="icon">
@@ -252,7 +420,7 @@
                     </a>
                 </li>
 
-                <li id="nav_tab_Sylvando" onclick="selectTab(event)">
+                <li id="nav_tab_Sylvando" onclick="selectTab('nav_tab_Sylvando')">
                     <a href="#">
                         <!--
                         <svg viewBox="0 0 100 100" class="icon">
@@ -271,7 +439,7 @@
                     </a>
                 </li>
 
-                <li id="nav_tab_Jade" onclick="selectTab(event)">
+                <li id="nav_tab_Jade" onclick="selectTab('nav_tab_Jade')">
                     <a href="#">
                         <!--
                         <svg viewBox="0 0 100 100" class="icon">
@@ -290,7 +458,7 @@
                     </a>
                 </li>
 
-                <li id="nav_tab_Rab" onclick="selectTab(event)">
+                <li id="nav_tab_Rab" onclick="selectTab('nav_tab_Rab')">
                     <a href="#">
                         <!--
                         <svg viewBox="0 0 100 100" class="icon">
@@ -309,7 +477,7 @@
                     </a>
                 </li>
 
-                <li id="nav_tab_Eight" onclick="selectTab(event)">
+                <li id="nav_tab_Eight" onclick="selectTab('nav_tab_Eight')">
                     <a href="#">
                         <!--
                         <svg viewBox="0 0 100 100" class="icon">

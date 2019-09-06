@@ -3,15 +3,15 @@
  * This file...
 */
 
+
 /*
 * This function ...
 */
 function init(){
-	//draw all the skill trees
-
 	//have the tab for the Hero's skill tree open by default
 	document.getElementById("nav_tab_Luminary").click();
 }// close init
+
 
 /*
 * This function ...
@@ -56,97 +56,94 @@ function changeLevel()
 
 
 /*
- * This function...
-*/
-function hidePopup()
-{
-	document.getElementById(selectedPopup).style.display = "none";
-}
-
-
-/*
 * This function...
 */
-function selectTab(event)
+function selectTab(clicked)
 {
-    var clicked, selected_main_grid;
-	
-    clicked = event.target || event.srcElement;
-	
-	if(clicked == (document.getElementById("nav_tab_Hero")))
+	if(clicked === "nav_tab_Luminary")
 	{
-		selected_main_grid = "main_grid_Hero";
-		hideSkillTree();
-        showSkillTree(selected_main_grid);
+		hideSkillTrees();
+        showSkillTree("main_grid_Luminary");
 	}
-	else if(clicked == nav_tab_Erik)
+	else if(clicked === "nav_tab_Erik")
 	{
-		selected_main_grid = "main_grid_Erik";
-		hideSkillTree();
-        showSkillTree(selected_main_grid);
+		hideSkillTrees();
+        showSkillTree("main_grid_Erik");
 	}
-    else if(clicked == nav_tab_Veronica)
+    else if(clicked === "nav_tab_Veronica")
 	{
-		selected_main_grid = "main_grid_Veronica";
-		hideSkillTree();
-        showSkillTree(selected_main_grid);
+		hideSkillTrees();
+        showSkillTree("main_grid_Veronica");
 	}
-    else if(clicked == nav_tab_Serena)
+    else if(clicked === "nav_tab_Serena")
 	{
-		selected_main_grid = "main_grid_Serena";
-		hideSkillTree();
-        showSkillTree(selected_main_grid);
+		hideSkillTrees();
+        showSkillTree("main_grid_Serena");
 	}
-    else if(clicked == nav_tab_Sylvando)
+    else if(clicked === "nav_tab_Sylvando")
 	{
-		selected_main_grid = "main_grid_Sylvando";
-		hideSkillTree();
-        showSkillTree(selected_main_grid);
+		hideSkillTrees();
+        showSkillTree("main_grid_Sylvando");
 	}
-    else if(clicked == nav_tab_Jade)
+    else if(clicked === "nav_tab_Jade")
 	{
-		selected_main_grid = "main_grid_Jade";
-		hideSkillTree();
-        showSkillTree(selected_main_grid);
+		hideSkillTrees();
+        showSkillTree("main_grid_Jade");
 	}
-    else if(clicked == nav_tab_Rab)
+    else if(clicked === "nav_tab_Rab")
 	{
-		selected_main_grid = "main_grid_Rab";
-		hideSkillTree();
-        showSkillTree(selected_main_grid);
+		hideSkillTrees();
+        showSkillTree("main_grid_Rab");
 	}
-    else if(clicked == nav_tab_Eight)
+    else if(clicked === "nav_tab_Eight")
 	{
-		selected_main_grid = "main_grid_Eight";
-		hideSkillTree();
-        showSkillTree(selected_main_grid);
+		hideSkillTrees();
+        showSkillTree("main_grid_Eight");
 	}
-}//close selectTab(e)
+	else
+	{
+		throw new Error("Tab Error");
+	}
+}//close selectTab(event)
 
 
 /*
- * This function...
+ * This function finds which popup button was clicked and opens the popup box
+ * corresponding to that button by displaying it through setting its display
+ * style to block
 */
-function showPopup()
+function openPopup(clicked)
 {
-	var clicked;
-
-	clicked = e.target || e.srcElement;
-
-	if(clicked == (document.getElementById('game_progress_act1_button'))){
-		document.getElementById('game_progress_act1_popup').style.display = "block";
+	if(clicked === "game_progress_act1_button")
+	{
+		document.getElementById("game_progress_act1_popup").style.display = "block";
 	}
-	else if(clicked == (document.getElementById('game_progress_act2_button'))){
-		document.getElementById('game_progress_act2_popup').style.display = "block";
+	else if(clicked === "game_progress_act2_button")
+	{
+		document.getElementById("game_progress_act2_popup").style.display = "block";
 	}
-	else if(clicked == (document.getElementById('game_progress_act3_button'))){
-		document.getElementById('game_progress_act3_popup').style.display = "block";
+	else if(clicked === "game_progress_act3_button")
+	{
+		document.getElementById("game_progress_act3_popup").style.display = "block";
 	}
-	else{
-		/*error*/
+	else
+	{
+		throw new Error("Popup Error");
 	}
 	
-}
+} //close showPopup()
+
+
+/*
+ * This function closes the popup box by hiding it through setting the display
+ * style of the grid for each of the three popup boxes to none.
+*/
+function closePopup()
+{
+	document.getElementById("game_progress_act1_popup").style.display = 'none';
+	document.getElementById("game_progress_act2_popup").style.display = 'none';
+	document.getElementById("game_progress_act3_popup").style.display = 'none';
+} //close hidePopup()
 
 
 /*
@@ -155,21 +152,31 @@ function showPopup()
 */
 function showSkillTree(selected_main_grid)
 {
-    document.getElementById(selected_main_grid).style.display = 'block';
+    document.getElementById(selected_main_grid).style.display = 'grid';
 }//close showSkillTree(selected_main_grid)
+
 
 /*
  * This function hides the currently displayed skill tree by using a loop to
  * set the display style of the grid every skill tree is in to none.
  */
-function hideSkillTree()
+function hideSkillTrees()
 {
     // Hide all elements with class="main_grid"
     let main_grid_list = document.getElementsByClassName("main_grid");
 
-    for (let i = 0; i < main_grid_list.length; i++) {
+    for (let i = 0; i < main_grid_list.length; i++)
+	{
         main_grid_list[i].style.display = "none";
     }
+
+	/*
+	document.getElementById("main_grid_Luminary").style.display = 'none';
+	document.getElementById("main_grid_Erik").style.display = 'none';
+	document.getElementById("main_grid_Veronica").style.display = 'none';
+	document.getElementById("main_grid_Serena").style.display = 'none';
+	document.getElementById("main_grid_Sylvando").style.display = 'none';
+	*/
 
 	//following line could replace above code in theory, but might not work in practice
     //document.getElementById(current_main_grid).style.display = 'none';
