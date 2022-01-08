@@ -495,7 +495,7 @@ cursor:pointer;
 		"skill_tree pep_power_chart"
 		"skill_tree stat_boost_chart";
   
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 2.5fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
